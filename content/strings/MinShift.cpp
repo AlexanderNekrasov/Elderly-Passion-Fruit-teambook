@@ -1,5 +1,5 @@
 /**
- * Author: Iurii Pustovalov 
+ * Author: Iurii Pustovalov
  * Date: 2022-11-08
  * Description: Calculates min-cyclic-shift of s, Duval decomposition
  * Time: O(n)
@@ -12,8 +12,10 @@ string minshift(string s) {
         ans = i;
         int j = i + 1, k = i;
         while (j < n && s[k] <= s[j]) {
-            if (s[k] < s[j]) k = i;
-            else ++k;
+            if (s[k] < s[j])
+                k = i;
+            else
+                ++k;
             ++j;
         }
         while (i <= k) {
