@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.22)  22 NOV 2023 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.22)  30 NOV 2023 17:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -948,7 +948,15 @@ runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/strings/MinShift.cpp" -o build/kactl.tmp )...executed.
 
- (./build/kactl.tmp)) (./content/graph/chapter.tex
+ (./build/kactl.tmp)
+runsystem(rm -f build/kactl.tmp)...executed.
+
+runsystem(python2 content/tex/preprocessor.py -i "content/strings/SA-IS.cpp" -o build/kactl.tmp )...executed.
+
+ (./build/kactl.tmp
+runsystem(python2 content/tex/preprocessor.py --print-header "|SA-IS.cpp" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [4])) (./content/graph/chapter.tex
 Chapter 4.
 runsystem(rm -f build/kactl.tmp)...executed.
 
@@ -962,7 +970,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graph/BlossomShrinking
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "BlossomShrinking.cpp|BlossomShrinking.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [4])
+ (./build/header2.tmp) [5])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graph/Lct.cpp" -o build/kactl.tmp )...executed.
@@ -970,10 +978,10 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graph/Lct.cpp" -o buil
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "Lct.cpp|Lct.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [5]
+ (./build/header2.tmp) [6]
 runsystem(python2 content/tex/preprocessor.py --print-header "|Lct.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [6])
+ (./build/header2.tmp) [7])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/graph/Pushrelabel.cpp" -o build/kactl.tmp )...executed.
@@ -986,7 +994,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/graph/GlobalMincut.cpp
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "|GlobalMincut.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [7])) (./content/geometry/chapter.tex
+ (./build/header2.tmp) [8])) (./content/geometry/chapter.tex
 Chapter 5.
 runsystem(rm -f build/kactl.tmp)...executed.
 
@@ -1005,7 +1013,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry/Intersections
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "Line.cpp|Intersections.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [8])
+ (./build/header2.tmp) [9])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry/Tangents.cpp" -o build/kactl.tmp )...executed.
@@ -1013,7 +1021,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry/Tangents.cpp"
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "Tangents.cpp|Tangents.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [9])
+ (./build/header2.tmp) [10])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry/Polygon.cpp" -o build/kactl.tmp )...executed.
@@ -1026,7 +1034,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry/IsInPolygon.c
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "IsInPolygon.cpp|IsInPolygon.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [10]
+ (./build/header2.tmp) [11]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 34.
 )
@@ -1047,7 +1055,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/geometry/IsHpiEmpty.cp
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "IsHpiEmpty.cpp|IsHpiEmpty.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [11])
+ (./build/header2.tmp) [12])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/geometry/HalfPlaneIntersection.cpp" -o build/kactl.tmp )...executed.
@@ -1061,7 +1069,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/math/BerlekampMassey.c
 (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "|BerlekampMassey.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [12])
+ (./build/header2.tmp) [13])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/math/GoncharFedor.cpp" -o build/kactl.tmp )...executed.
@@ -1079,7 +1087,7 @@ runsystem(python2 content/tex/preprocessor.py -i "content/math/XorConvolution.cp
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "XorConvolution.cpp|XorConvolution.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [13])
+ (./build/header2.tmp) [14])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/math/Factorization.cpp" -o build/kactl.tmp )...executed.
@@ -1092,40 +1100,49 @@ runsystem(python2 content/tex/preprocessor.py -i "content/math/NTT.cpp" -o build
  (./build/kactl.tmp
 runsystem(python2 content/tex/preprocessor.py --print-header "NTT.cpp|NTT.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [14])
+ (./build/header2.tmp) [15]
+runsystem(python2 content/tex/preprocessor.py --print-header "|NTT.cpp" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [16])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/math/FFT.cpp" -o build/kactl.tmp )...executed.
 
- (./build/kactl.tmp)
+ (./build/kactl.tmp
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 29.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
+runsystem(python2 content/tex/preprocessor.py --print-header "FFT.cpp|FFT.cpp" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [17])
 runsystem(rm -f build/kactl.tmp)...executed.
 
 runsystem(python2 content/tex/preprocessor.py -i "content/math/AndConvolution.cpp" -o build/kactl.tmp )...executed.
 
- (./build/kactl.tmp)
-runsystem(python2 content/tex/preprocessor.py --print-header "AndConvolution.cpp|AndConvolution.cpp" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [15]) (./content/integrals/chapter.tex
+ (./build/kactl.tmp)) (./content/integrals/chapter.tex
 Chapter 7.
 runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
 
-(./build/header2.tmp) [16]
-runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [17]
-runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
-
- (./build/header2.tmp) [18]
+(./build/header2.tmp) [18]
 runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
 
  (./build/header2.tmp) [19]
 runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
 
- (./build/header2.tmp) [20])
+ (./build/header2.tmp) [20]
 runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
 
  (./build/header2.tmp) [21]
-<content/contest/YouthfulPassionFruitMonitor.pdf, id=1853, 845.1575pt x 597.23125pt>
+runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [22])
+runsystem(python2 content/tex/preprocessor.py --print-header "|AndConvolution.cpp" -o build/header2.tmp)...executed.
+
+ (./build/header2.tmp) [23]
+<content/contest/YouthfulPassionFruitMonitor.pdf, id=2149, 845.1575pt x 597.23125pt>
 File: content/contest/YouthfulPassionFruitMonitor.pdf Graphic file (type pdf)
 <use content/contest/YouthfulPassionFruitMonitor.pdf>
 Package pdftex.def Info: content/contest/YouthfulPassionFruitMonitor.pdf  used on input line 53.
@@ -1134,7 +1151,7 @@ File: content/contest/YouthfulPassionFruitMonitor.pdf Graphic file (type pdf)
 <use content/contest/YouthfulPassionFruitMonitor.pdf>
 Package pdftex.def Info: content/contest/YouthfulPassionFruitMonitor.pdf  used on input line 53.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
-<content/contest/YouthfulPassionFruitMonitor.pdf, id=1856, page=1, 845.1575pt x 597.23125pt>
+<content/contest/YouthfulPassionFruitMonitor.pdf, id=2152, page=1, 845.1575pt x 597.23125pt>
 File: content/contest/YouthfulPassionFruitMonitor.pdf Graphic file (type pdf)
 <use content/contest/YouthfulPassionFruitMonitor.pdf, page 1>
 Package pdftex.def Info: content/contest/YouthfulPassionFruitMonitor.pdf , page1 used on input line 53.
@@ -1155,7 +1172,7 @@ File: content/contest/YouthfulPassionFruitMonitor.pdf Graphic file (type pdf)
 <use content/contest/YouthfulPassionFruitMonitor.pdf, page 1>
 Package pdftex.def Info: content/contest/YouthfulPassionFruitMonitor.pdf , page1 used on input line 53.
 (pdftex.def)             Requested size: 845.19412pt x 597.25711pt.
- [22 <./content/contest/YouthfulPassionFruitMonitor.pdf>]
+ [24 <./content/contest/YouthfulPassionFruitMonitor.pdf>]
 \tf@ptc=\write4
 \openout4 = `kactl.ptc'.
 
@@ -1170,18 +1187,18 @@ Package rerunfilecheck Info: File `kactl.out' has not changed.
 (rerunfilecheck)             Checksum: BDA3E04199D6C06A959402480ABF0A06;600.
  ) 
 Here is how much of TeX's memory you used:
- 19810 strings out of 478287
- 300953 string characters out of 5849288
+ 20192 strings out of 478287
+ 306719 string characters out of 5849288
  1467013 words of memory out of 5000000
- 35873 multiletter control sequences out of 15000+600000
+ 35959 multiletter control sequences out of 15000+600000
  481653 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,77p,563b,2196s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on build//kactl.pdf (23 pages, 564294 bytes).
+Output written on build//kactl.pdf (25 pages, 578078 bytes).
 PDF statistics:
- 2327 PDF objects out of 2487 (max. 8388607)
- 2219 compressed objects within 23 object streams
- 1707 named destinations out of 1728 (max. 500000)
+ 2682 PDF objects out of 2984 (max. 8388607)
+ 2569 compressed objects within 26 object streams
+ 1994 named destinations out of 2073 (max. 500000)
  82 words of extra memory for PDF output out of 10000 (max. 10000000)
 
