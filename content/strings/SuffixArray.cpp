@@ -20,7 +20,7 @@ vector<int> buildSuffixArray(string &s) {
             c[a[i]] = c[a[i - 1]];
         }
     }
-    for (int l = 1; l < n; l *= 2) {
+    for (int L = 1; L < n; L *= 2) {
         vector<int> cnt(n);
         for (auto i : c) {
             cnt[i]++;
@@ -31,7 +31,7 @@ vector<int> buildSuffixArray(string &s) {
         }
         vector<int> na(n);
         for (int i = 0; i < n; i++) {
-            int pos = (a[i] - l + n) % n;
+            int pos = (a[i] - L + n) % n;
             na[pref[c[pos]]++] = pos;
         }
         a = na;
@@ -39,7 +39,7 @@ vector<int> buildSuffixArray(string &s) {
         cc = 0;
         for (int i = 0; i < n; i++) {
             if (i == 0 || c[a[i]] != c[a[i - 1]] ||
-                c[(a[i] + l) % n] != c[(a[i - 1] + l) % n]) {
+                c[(a[i] + L) % n] != c[(a[i - 1] + L) % n]) {
                 nc[a[i]] = cc++;
             } else {
                 nc[a[i]] = nc[a[i - 1]];
