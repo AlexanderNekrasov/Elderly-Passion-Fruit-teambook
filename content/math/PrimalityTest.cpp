@@ -21,7 +21,7 @@ bool isprime(ll p) {
         ll last = x;
         nw *= 2;
         while (nw <= p - 1) {
-            x = (__int128_t)x * x % mod;
+            x = (__int128_t)x * x % p;
             if (x == 1) {
                 if (last != p - 1) {
                     return 0;
