@@ -9,9 +9,7 @@ using ull = unsigned long long;
 #define pbc push_back
 #define mp make_pair
 #define all(a) (a).begin(), (a).end()
-#define vin(a)                                                                 \
-    for (auto &i : a)                                                          \
-    cin >> i
+#define vin(a) for (auto &i : a) cin >> i
 
 mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
 

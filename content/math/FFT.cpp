@@ -28,7 +28,6 @@ void FFT(int n, vector <cd>& a, bool rv = false) {
         fftInit = 1;
     }
     int LOG = ceil(log2(n));
-    // cout << LOG << '\n';
     for (int i = 0; i < n; ++i) {
         if (i < (rev[i] >> (MAXLOG - LOG))) {
             swap(a[i], a[(rev[i] >> (MAXLOG - LOG))]);
