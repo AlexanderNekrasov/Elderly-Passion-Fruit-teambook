@@ -1,0 +1,1 @@
+g++ -std=c++17 -g -DLOCAL -fsanitize=address,bounds,undefined -o $1 $1.cpp

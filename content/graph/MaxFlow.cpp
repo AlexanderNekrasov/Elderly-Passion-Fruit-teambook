@@ -1,3 +1,10 @@
+/**
+ * Author: Iurii Pustovalov
+ * Date: ?
+ * Description: Dinic
+ * Time: O(n^2 m)
+ */
+
 struct MaxFlow {
     const int inf = 1e9 + 20;
     struct edge {

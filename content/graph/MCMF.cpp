@@ -1,3 +1,10 @@
+/**
+ * Author: Iurii Pustovalov
+ * Date: ?
+ * Description: Min cost
+ * Time: O(?)
+ */
+
 struct MCMF {
     struct edge {
         int a, b, cap, cost;
