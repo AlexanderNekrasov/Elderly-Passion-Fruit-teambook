@@ -47,5 +47,7 @@ vector<int> buildSuffixArray(string &s) {
         }
         c = nc;
     }
+    a.erase(a.begin());
+    s.pop_back();
     return a;
 }
