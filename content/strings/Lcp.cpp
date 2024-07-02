@@ -1,10 +1,5 @@
-/**
- * Author: Igor Markelov
- * Date: 2022-11-12
- * Description: lcp array
- * Time: O(n)
- */
 
+vector<int> perm;
 vector<int> buildLCP(string &s, vector<int> &a) {
     int n = s.size();
     vector<int> ra(n);
@@ -21,13 +16,20 @@ vector<int> buildLCP(string &s, vector<int> &a) {
             continue;
         }
         int j = a[ra[i] + 1];
-        while (s[i + cur] == s[j + cur])
-            cur++;
+        while (s[i + cur] == s[j + cur]) cur++;
         lcp[ra[i]] = cur;
     }
     // for suffixes!!!
     s.pop_back();
     a.erase(a.begin());
     lcp.erase(lcp.begin());
+    perm.resize(a.size());
+    for (int i = 0; i < a.size(); ++i) perm[a[i]] = i;
     return lcp;
+}
+int getLCP(int l, int r) {
+    l = perm[l], r = perm[r];
+    if (l > r) swap(l, r);
+    int xx = cntr[r - l];
+    return min(spt[l][xx], spt[r - (1 << xx)][xx]);
 }
