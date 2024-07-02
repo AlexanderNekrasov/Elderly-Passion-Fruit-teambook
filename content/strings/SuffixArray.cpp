@@ -6,7 +6,7 @@
  */
 vector<int> buildSuffixArray(string &s) {
     // Remove, if you want to sort cyclic shifts
-    s += "$";
+    s += (char)(1);
     int n = s.size();
     vector<int> a(n);
     iota(all(a), 0);
