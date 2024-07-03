@@ -1,3 +1,6 @@
+#ifdef LOCAL
+#define _GLIBCXX_DEBUG
+#endif
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -8,8 +11,8 @@ using ull = unsigned long long;
 
 #define pbc push_back
 #define mp make_pair
-#define all(a) (a).begin(), (a).end()
-#define vin(a) for (auto &i : a) cin >> i
+#define all(v) (v).begin(), (v).end()
+#define vin(v) for (auto &el : a) cin >> el
 
 mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
 
@@ -29,5 +32,4 @@ signed main() {
     cin.tie(0)->sync_with_stdio(0);
     cout.precision(20), cout.setf(ios::fixed);
 
-    return 0;
 }
