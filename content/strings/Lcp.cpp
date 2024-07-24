@@ -1,10 +1,11 @@
+
 /**
- * Author: Igor Markelov
- * Date: 2022-11-12
+ * Author: Iurii Pustovalov
+ * Date: 2024-07-03
  * Description: lcp array
  * Time: O(n)
  */
-
+vector<int> perm;
 vector<int> buildLCP(string &s, vector<int> &a) {
     int n = s.size();
     vector<int> ra(n);
@@ -21,13 +22,29 @@ vector<int> buildLCP(string &s, vector<int> &a) {
             continue;
         }
         int j = a[ra[i] + 1];
-        while (s[i + cur] == s[j + cur])
-            cur++;
+        while (s[i + cur] == s[j + cur]) cur++;
         lcp[ra[i]] = cur;
     }
-    // for suffixes!!!
-    s.pop_back();
-    a.erase(a.begin());
-    lcp.erase(lcp.begin());
+    perm.resize(a.size());
+    for (int i = 0; i < a.size(); ++i) perm[a[i]] = i;
     return lcp;
+}
+int cntr[MAXN];
+int spt[MAXN][lgg];
+void build(vector<int> &a) {
+    for (int i = 0; i < a.size(); ++i) {
+        spt[i][0] = a[i];
+    }
+    for (int i = 2; i < MAXN; ++i) cntr[i] = cntr[i / 2] + 1;
+    for (int h = 1; (1 << (h - 1)) < a.size(); ++h) {
+        for (int i = 0; i + (1 << (h - 1)) < a.size(); ++i) {
+            spt[i][h] = min(spt[i][h - 1], spt[i + (1 << (h - 1))][h - 1]);
+        }
+    }
+}
+int getLCP(int l, int r) {
+    l = perm[l], r = perm[r];
+    if (l > r) swap(l, r);
+    int xx = cntr[r - l];
+    return min(spt[l][xx], spt[r - (1 << xx)][xx]);
 }

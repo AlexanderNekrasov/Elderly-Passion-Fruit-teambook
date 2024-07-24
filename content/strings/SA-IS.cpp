@@ -25,12 +25,10 @@ void induced_sort(vector<int> &vec, int LIM, vector<int> &sa, vector<bool> &sl,
         }
     }
     fill(all(r), 0);
-    for (int c : vec)
-        ++r[c];
+    for (int c : vec) ++r[c];
     partial_sum(all(r), r.begin());
     for (int k = sa.size() - 1, i = sa[k]; k >= 1; --k, i = sa[k])
-        if (i >= 1 && !sl[i - 1])
-            sa[--r[vec[i - 1]]] = i - 1;
+        if (i >= 1 && !sl[i - 1]) sa[--r[vec[i - 1]]] = i - 1;
 }
 vector<int> SA_IS(vector<int> &vec, int LIM) {
     const int n = vec.size();
@@ -84,30 +82,12 @@ vector<int> SA_IS(vector<int> &vec, int LIM) {
     induced_sort(vec, LIM, sa, sl, nfx);
     return sa;
 }
-template <typename T> vector<int> suffix_array(T &s, const int LIM = 128) {
+template <typename T>
+vector<int> suffix_array(T &s, const int LIM = 128) {
     vector<int> vec(s.size() + 1);
     copy(all(s), begin(vec));
-    vec.back() = '$';
+    vec.back() = (char)(1);
     auto ret = SA_IS(vec, LIM);
     ret.erase(ret.begin());
     return ret;
-}
-template <typename T> vector<int> LCP(const T &s, const vector<int> &sa) {
-    int n = (int)s.size(), k = 0;
-    vector<int> lcp(n), rank(n);
-    for (int i = 0; i < n; ++i)
-        rank[sa[i]] = i;
-    for (int i = 0; i < n; i++, k ? k-- : 0) {
-        if (rank[i] == n - 1) {
-            k = 0;
-            continue;
-        }
-        int j = sa[rank[i] + 1];
-        while (i + k < n && j + k < n && s[i + k] == s[j + k]) {
-            k++;
-        }
-        lcp[rank[i]] = k;
-    }
-    lcp[n - 1] = 0;
-    return lcp;
 }
