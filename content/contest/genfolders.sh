@@ -1,7 +1,6 @@
-chmod +x bld
-chmod +x bldf
-for f in {a..z}
+chmod +x bld*
+for f in {A..Z}
 do
     mkdir $f
-    cp main.cpp bld bldf $f
+    cp main.cpp bld* $f
 done
