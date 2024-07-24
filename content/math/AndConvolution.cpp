@@ -16,7 +16,7 @@ void conv(vector<int> &a, bool x) {
             }
         }
     }
-} // https://judge.yosupo.jp/problem/bitwise_and_convolution
+}
 vector<int> andcon(vector<int> a, vector<int> b) {
     int n = 1;
     while (n < max(a.size(), b.size()))
