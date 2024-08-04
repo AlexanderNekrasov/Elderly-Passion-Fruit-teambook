@@ -1,41 +1,43 @@
 /**
- * Author: Igor Markelov
- * Date: 2022-11-18
+ * Author: alexxela12345,daubi,talant
+ * Date: 2024-08-03
  * Description: struct Point
  */
 
-struct Point {
-    ld x = 0, y = 0;
-    Point() = default;
-    Point(ld _x, ld _y) : x(_x), y(_y) {}
-    Point ort() const { return Point(-y, x); }
-    int half() const { return sign(y) == 1 || (sign(y) == 0 && sign(x) >= 0); }
-    bool operator<(const Point &other) const {
-        if (sign(y - other.y) != 0) {
-            return y < other.y;
-        } else if (sign(x - other.x) != 0) {
-            return x < other.x;
-        } else {
-            return false;
-        }
-    }
-    Point turn(ld sin, ld cos) const {
-        return Point(x * cos - y * sin, x * sin + y * cos);
-    }
-    Point turn(ld phi) const { return turn(sin(phi), cos(phi)); }
+#define vec point
+struct point {//% - cross, * - dot
+    ld x, y;
 };
-
-#define Vec Point
-
-ld getAngle(Vec &lhs, Vec &rhs) { return atan2(lhs ^ rhs, lhs * rhs); }
-
-bool cmpHalf(const Vec &lhs, const Vec &rhs) {
-    if (lhs.half() != rhs.half()) {
-        return lhs.half();
+bool operator<(const point &a, const point &b)  {
+    if (sign(a.y - b.y) != 0) {
+        return a.y < b.y;
+    } else if (sign(a.x - b.x) != 0) {
+        return a.x < b.x;
+    }
+    return 0;
+}
+point norm(point a) {
+    return a / len(a);
+}
+int half(point a) {
+    return (sign(a.y) == -1 || (sign(a.y) ==0 && a.x < 0));
+}
+point ort(point a) { 
+    return {-a.y, a.x};
+}
+point turn(point a, ld ang) {
+    return {a.x * cos(ang) - a.y * sin(ang), a.x * sin(ang) + a.y * cos(ang)};
+}
+ld getAngle(point &a, point &b) { 
+    return atan2(a % b, a * b); 
+}
+bool cmpHalf(const point &a, const point &b) {
+    if (half(a) != half(b)) {
+        return half(b);
     } else {
-        int sgn = sign(lhs ^ rhs);
+        int sgn = sign(a % b);
         if (!sgn) {
-            return lhs.len2() < rhs.len2();
+            return len2(a) < len2(b);
         } else {
             return sgn == 1;
         }

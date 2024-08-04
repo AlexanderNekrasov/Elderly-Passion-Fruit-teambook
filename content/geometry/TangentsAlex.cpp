@@ -6,7 +6,7 @@
  * Time: O(\log(n))
  */
 
-pair<int, int> tangents_alex(vector<Point> &p, Point &a) {
+pair<int, int> tangents_alex(vector<point> &p, point &a) {
     int n = p.size();
     int l = __lg(n);
     auto findWithSign = [&](int val) {
@@ -14,9 +14,9 @@ pair<int, int> tangents_alex(vector<Point> &p, Point &a) {
         for (int k = l; k >= 0; --k) {
             int i1 = (i - (1 << k) + n) % n;
             int i2 = (i + (1 << k)) % n;
-            if (sign((p[i1] - a) ^ (p[i] - a)) == val)
+            if (sign((p[i1] - a) % (p[i] - a)) == val)
                 i = i1;
-            if (sign((p[i2] - a) ^ (p[i] - a)) == val)
+            if (sign((p[i2] - a) % (p[i] - a)) == val)
                 i = i2;
         }
         return i;
