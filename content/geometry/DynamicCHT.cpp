@@ -1,7 +1,7 @@
 /**
  * Author: talant
  * Date: 2024-08-09
- * Description: Dynamic CHT
+ * Description: Dynamic CHT for maximum
 */
 struct Line {
     mutable ll k, m, p;
