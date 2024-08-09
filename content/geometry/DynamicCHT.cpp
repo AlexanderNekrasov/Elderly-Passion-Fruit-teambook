@@ -1,43 +1,36 @@
 /**
  * Author: talant
  * Date: 2024-08-09
- * Description: Dynamic CHT(WARNING untested!)
+ * Description: Dynamic CHT
 */
 struct Line {
-    ll k, b;
-    mutable const Line *nx;
-    bool operator<(ll x) const {
-        if (!nx) return 0;
-        return b - nx->b < (nx->k - k) * x;
-    }
-    bool operator<(const Line &rhs) const { return k < rhs.k; }
-};
-// will maintain upper hull for maximum
-struct HullDynamic : multiset<Line, less<>> {
-    bool bad(iterator y) {
-        auto z = next(y);
-        if (y == begin()) {
-            if (z == end()) return 0;
-            return y->k == z->k && y->b <= z->b;
-        }
-        auto x = prev(y);
-        if (z == end()) return y->k == x->k && y->b <= x->b;
-        return (x->b - y->b) * (z->k - y->k) >= (y->b - z->b) * (y->k - x->k);
-    }
-    void insert_line(ll k, ll b) {
-        auto y = insert({k, b, 0});
-        if (bad(y)) {
-            erase(y);
-            return;
-        }
-        auto z = next(y);
-        while (z != end() && bad(z)) z = erase(z);
-        if (z != end()) y->nx = &*z;
-        while (y != begin() && bad(z = prev(y))) erase(z);
-        if (y != begin()) z->nx = &*y;
-    }
-    ll eval(ll x) {
-        auto l = *lower_bound(x);
-        return l.k * x + l.b;
+    mutable ll k, m, p;
+    bool operator<(const Line& o) const {
+        return Q ? p < o.p : k < o.k;
     }
 };
+struct LineContainer : multiset<Line> {
+    const ll inf = LLONG_MAX;
+    ll div(ll a, ll b){
+        return a / b - ((a ^ b) < 0 && a % b);
+    }
+    bool isect(iterator x, iterator y) {
+        if (y == end()) { x->p = inf; return false; }
+        if (x->k == y->k) x->p = x->m > y->m ? inf : -inf;
+        else x->p = div(y->m - x->m, x->k - y->k);
+        return x->p >= y->p;
+    }
+    void add(ll k, ll m) {
+        auto z = insert({k, m, 0}), y = z++, x = y;
+        while (isect(y, z)) z = erase(z);
+        if (x != begin() && isect(--x, y)) isect(x, y = erase(y));
+        while ((y = x) != begin() && (--x)->p >= y->p)
+            isect(x, erase(y));
+    }
+    ll query(ll x) {
+        assert(!empty());
+        Q = 1; auto l = *lower_bound({0,0,x}); Q = 0;
+        return l.k * x + l.m;
+    }
+};
+
