@@ -2,7 +2,7 @@
  * Author: talant(KAN)
  * Date: 2024-08-9
  * Description: Simplex
- * Time: exponential XD
+ * Time: exponential XD(ok for 200-300 variables/bounds)
  */
 
 /* solver for linear programs of the form
