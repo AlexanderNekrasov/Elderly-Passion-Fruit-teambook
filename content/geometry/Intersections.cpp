@@ -13,7 +13,7 @@ bool isCrossed(ld lx, ld rx, ld ly, ld ry) {
 }
 
 // if two segments [a, b] and [c, d] has AT LEAST one common point -> true
-bool isCrossed(point &a, point &b, point &c, point &d) {
+bool intersects(const point &a, const point &b, const point &c, const point &d) {
     if (!isCrossed(a.x, b.x, c.x, d.x))
         return false;
     if (!isCrossed(a.y, b.y, c.y, d.y))
@@ -39,17 +39,17 @@ int intersect(point o1, ld r1, point o2, ld r2, point &i1, point &i2) {
         swap(o1, o2);
         swap(r1, r2);
     }
-    if (sign(r1 - r2) == 0 && o1 == o2) {
+    if (sign(r1 - r2) == 0 && len2(o2 - o1) < EPS) {
         return 3;
     }
-    ld len = len(o1 - o2);
-    if (sign(len - r1 - r2) == 1 || sign(r1 - len - r2) == 1) {
+    ld ln = len(o1 - o2);
+    if (sign(ln - r1 - r2) == 1 || sign(r1 - ln - r2) == 1) {
         return 0;
     }
-    ld d = (sq(r1) - sq(r2) + sq(len)) / 2 / len;
-    Vec v = norm(o2 - o1);
-    Point a = o1 + v * d;
-    if (sign(len - r1 - r2) == 0 || sign(len + r2 - r1) == 0) {
+    ld d = (sq(r1) - sq(r2) + sq(ln)) / 2 / ln;
+    vec v = norm(o2 - o1);
+    point a = o1 + v * d;
+    if (sign(ln - r1 - r2) == 0 || sign(ln + r2 - r1) == 0) {
         i1 = a;
         return 1;
     }
@@ -58,16 +58,16 @@ int intersect(point o1, ld r1, point o2, ld r2, point &i1, point &i2) {
     i2 = a - v;
     return 2;
 }
-//intersecting line and circle
-int cross(point &o, ld r, line &l, point &i1, point &i2) {
-    ld len = dist(l, o);
+//intersecting line and circle, line should be normed
+int intersect(point &o, ld r, line &l, point &i1, point &i2) {
+    ld len = abs(l.eval(o));
     int sgn = sign(len - r);
     if (sgn == 1) {
         return 0;
     }
     vec v = norm(vec{l.a, l.b}) * len;
     if (sign(l.eval(o + v)) != 0) {
-        v = {0, 0} - v;
+        v = vec{0, 0} - v;
     }
     point a = o + v;
     if (sgn == 0) {

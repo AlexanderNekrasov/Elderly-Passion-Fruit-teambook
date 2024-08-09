@@ -5,8 +5,8 @@
  */
 
 bool isOnSegment(point &a, point &b, point &x) {
-    if (a == b) {
-        return a == x;
+    if (sign(len2(a - b)) == 0) {
+        return sign(len(a - x)) == 0;
     }
     return sign((b - a) % (x - a)) == 0 && sign((b - x) * (a - x)) <= 0;
     // optional (slower, but works better if there are some precision
@@ -14,21 +14,21 @@ bool isOnSegment(point &a, point &b, point &x) {
     // == 0;
 }
 
-bool isIn(vector<point> &p, point &a) {
+int isIn(vector<point> &p, point &a) {
     int n = p.size();
-    // depends on limitations(2*MAXC + 1)
-    point b = a + point{2e9 + 1, 1};
+    // depends on limitations(2*MAXC + 228)
+    point b = a + point{2e9 + 228, 1};
     int cnt = 0;
     for (int i = 0; i < n; ++i) {
         point x = p[i];
         point y = p[i + 1 < n ? i + 1 : 0];
         if (isOnSegment(x, y, a)) {
             // depends on the problem statement
-            return true;
+            return 1;
         }
-        cnt += isCrossed(x, y, a, b);
+        cnt += intersects(x, y, a, b);
     }
-    return cnt % 2 == 1;
+    return 2 * (cnt % 2 == 1);
     /*optional (atan2 is VERY SLOW)!
     ld ans = 0;
     int n = p.size();

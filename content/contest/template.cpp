@@ -2,7 +2,6 @@
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
-
 using namespace std;
 
 using ll = long long;
@@ -28,8 +27,16 @@ template <typename T1, typename T2> inline void chkmax(T1 &x, const T2 &y) {
     }
 }
 
+void solve() {
+    
+}
+
 signed main() {
     cin.tie(0)->sync_with_stdio(0);
     cout.precision(20), cout.setf(ios::fixed);
-
+    int t = 1;
+    // cin >> t;
+    while (t--) {
+        solve();
+    }
 }

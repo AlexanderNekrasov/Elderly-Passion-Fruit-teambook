@@ -4,7 +4,7 @@
  * Description: Determines is half plane intersectinos.
  * Time: O(n) (expected)
  */
-//all lines must be normed!!!!!!!!!!!!!!!
+//all lines must be normed!!!!!!!!!!!!!!, sign > 0
 bool isHpiEmpty(vector<line> lines) {
     // return hpi(lines).empty();
     // overflow/precision problems?
