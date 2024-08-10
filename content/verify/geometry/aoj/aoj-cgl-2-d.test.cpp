@@ -3,12 +3,12 @@
 
 
 #define main main2
-#include "../../contest/template.cpp"
+#include "../../../contest/template.cpp"
 #undef main
 
-#include "../../geometry/Point.cpp"
-#include "../../geometry/Line.cpp"
-#include "../../geometry/Intersections.cpp"
+#include "../../../geometry/Point.cpp"
+#include "../../../geometry/Line.cpp"
+#include "../../../geometry/Intersections.cpp"
 
 ld dist_segvec(vec a, vec b, vec v) {
     if (sign((a - b) * (v - b)) >= 0 && sign((b - a) * (v - a)) >= 0) {

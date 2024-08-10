@@ -3,17 +3,17 @@
  * Date: 2022-11-18
  * Description: Tangents to circles.
  */
-
+// tangents from point to circle
 int tangents(point &o, ld r, point &p, point &i1, point &i2) {
-    ld len = len(o - p);
-    int sgn = sign(len - r);
+    ld ln = len(o - p);
+    int sgn = sign(ln - r);
     if (sgn == -1) {
         return 0;
     } else if (sgn == 0) {
-        I1 = p;
+        i1 = p;
         return 1;
     } else {
-        ld x = sq(r) / len;
+        ld x = sq(r) / ln;
         vec v = norm(p - o) * x;
         point a = o + v;
         v = ort(norm(p - o)) * sqrt(sq(r) - sq(x));
@@ -36,7 +36,7 @@ void _tangents(point c, ld r1, ld r2, vector<line> &ans) {
     l.c = r1;
     ans.push_back(l);
 }
-//tangents between two circles
+// tangents between two circles
 vector<line> tangents(point o1, ld r1, point o2, ld r2) {
     vector<line> ans;
     for (int i = -1; i <= 1; i += 2)

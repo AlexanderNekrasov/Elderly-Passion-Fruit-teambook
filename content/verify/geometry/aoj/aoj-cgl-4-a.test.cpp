@@ -1,11 +1,11 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A"
 
 #define main main2
-#include "../../contest/template.cpp"
+#include "../../../contest/template.cpp"
 #undef main
 
-#include "../../geometry/Point.cpp"
-#include "../../geometry/Hull.cpp"
+#include "../../../geometry/Point.cpp"
+#include "../../../geometry/Hull.cpp"
 
 signed main() {
     cin.tie(0)->sync_with_stdio(0);

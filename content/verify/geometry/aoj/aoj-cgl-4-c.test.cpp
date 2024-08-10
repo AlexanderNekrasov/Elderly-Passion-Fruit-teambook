@@ -2,13 +2,13 @@
 #define ERROR 0.000001
 
 #define main main2
-#include "../../contest/template.cpp"
+#include "../../../contest/template.cpp"
 #undef main
 
-#include "../../geometry/Point.cpp"
-#include "../../geometry/Line.cpp"
-#include "../../geometry/Intersections.cpp"
-#include "../../geometry/HalfPlaneIntersection.cpp"
+#include "../../../geometry/Point.cpp"
+#include "../../../geometry/Line.cpp"
+#include "../../../geometry/Intersections.cpp"
+#include "../../../geometry/HalfPlaneIntersection.cpp"
 
 signed main() {
     cin.tie(0)->sync_with_stdio(0);

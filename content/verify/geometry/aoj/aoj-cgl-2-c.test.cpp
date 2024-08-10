@@ -3,12 +3,12 @@
 
 
 #define main main2
-#include "../../contest/template.cpp"
+#include "../../../contest/template.cpp"
 #undef main
 
-#include "../../geometry/Point.cpp"
-#include "../../geometry/Line.cpp"
-#include "../../geometry/Intersections.cpp"
+#include "../../../geometry/Point.cpp"
+#include "../../../geometry/Line.cpp"
+#include "../../../geometry/Intersections.cpp"
 
 signed main() {
     cin.tie(0)->sync_with_stdio(0);

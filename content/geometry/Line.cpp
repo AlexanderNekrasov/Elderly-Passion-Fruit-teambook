@@ -16,6 +16,11 @@ struct line {
     }
     ld eval(point p) const { return a * p.x + b * p.y + c; }
     bool isIn(point p) const { return sign(eval(p)) >= 0; }
+    bool operator==(const line &other) const {
+        return sign(a * other.b - b * other.a) == 0 &&
+               sign(a * other.c - c * other.a) == 0 &&
+               sign(b * other.c - c * other.b) == 0;
+    }
 };
 line getln(point a, point b) {
     line res;
