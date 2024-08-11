@@ -5,8 +5,8 @@
  */
 
 vector<point> hull(vector<point> p, bool need_all=false) {
-   sort(begin(p), end(p));
-   p.erase(unique(begin(p), end(p)), end(p));
+   sort(all(p));
+   p.erase(unique(all(p)), end(p));
    int n = p.size(), k = 0;
    if (n <= 2) return p;
    vector<point> ch(2 * n);

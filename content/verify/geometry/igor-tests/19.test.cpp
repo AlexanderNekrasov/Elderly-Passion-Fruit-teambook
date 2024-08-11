@@ -18,7 +18,7 @@ void test() {
     auto getPoint = [&]() -> point {
         return {get(-C, C), get(-C, C)};
     };
-    for (int test_id = 0;; ++test_id) {
+    for (int test_id = 0;test_id<10000; ++test_id) {
         int n = get(1, N);
         vector<line> lines(n);
         for (int i = 0; i < n; ++i) {

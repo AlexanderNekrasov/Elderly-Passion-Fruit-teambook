@@ -23,7 +23,7 @@ bool intersects(const point &a, const point &b, const point &c, const point &d) 
     return 1;
 }
 //intersecting lines
-bool intersect(line &l, line &m, point &I) {
+bool intersect(line l, line m, point &I) {
     ld d = l.b * m.a - m.b * l.a;
     if (sign(d) == 0) {
         return false;
@@ -59,7 +59,7 @@ int intersect(point o1, ld r1, point o2, ld r2, point &i1, point &i2) {
     return 2;
 }
 //intersecting line and circle, line should be normed
-int intersect(point &o, ld r, line &l, point &i1, point &i2) {
+int intersect(point o, ld r, line l, point &i1, point &i2) {
     ld len = abs(l.eval(o));
     int sgn = sign(len - r);
     if (sgn == 1) {
