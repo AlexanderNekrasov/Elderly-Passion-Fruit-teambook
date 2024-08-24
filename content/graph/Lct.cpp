@@ -1,5 +1,5 @@
 /**
- * Author: Alexandr Nekrasov
+ * Author: Alexander Nekrasov
  * Date: ?
  * Description: link-cut tree
  * Time: O(n\log(n))

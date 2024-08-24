@@ -1,5 +1,5 @@
 /**
- * Author: Alexandr Nekrasov
+ * Author: Alexander Nekrasov
  * Date: ?
  * Description: Maxflow
  * Time: O(n^2m)
