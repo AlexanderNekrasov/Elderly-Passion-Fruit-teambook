@@ -12,10 +12,10 @@ struct line {
 }; 
 struct part {
     line a;
-    double x;
+    ld x;
 };
-double intersection(line a, line b) {
-    return (a.b - b.b) / (b.k - a.k);
+ld intersection(line a, line b) {
+    return (ld) (a.b - b.b) / (b.k - a.k);
 }
 struct ConvexHullMin {
     vector <part> st;
