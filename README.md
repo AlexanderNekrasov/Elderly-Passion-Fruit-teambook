@@ -53,12 +53,12 @@
 - [ ] Выражения через тангенс половинного угла всего
 - [ ] 3d geom: hull nd, формулы???
 - [ ] prime count (у kactl)
-- [ ] golden section search (fftilted?)
+- [x] golden section search (fftilted?)
 - [ ] determinants (fftilted)
 - [ ] solveLinear (fftilted)
-- [ ] modular sqrt (fftilted)
+- [x] modular sqrt (fftilted)
 - [ ] Polynomial Interpolation (fftilted?)
-- [ ] Fast modulo multiplication?
+- [x] Fast modulo multiplication?
 - [ ] Код грея
 - [ ] Многомерный Симпсон (fftilted?)
 - [ ] Дискретное логарифмирование за быстро
