@@ -63,4 +63,5 @@ BEST Theorem: $ec(G) = \#SpanningTrees(G) \cdot \prod\limits_{v\in V} (deg(v) - 
 Erdos: Graph exists $\Leftrightarrow  d_1 \geq .. \geq d_n, \forall k \sum\limits_{i=1}^{k}d_i \leq k(k-1) + \sum\limits_{i=k+1}^{n}min(d_i,k)$\\
 Pick: $Area = Interior + \frac{Bounds}{2} - 1$\\
 Euler: $V - E + F = 1 + C$\\
-Kirchhoff: put degree on diagonal, $-1$ for each edge, cut out first row + column, calc det - result is \#SpanningTrees
+Kirchhoff: put degree on diagonal, $-1$ for each edge, cut out first row + column, calc det - result is \#SpanningTrees\\
+Tree Hash: for vertex $v$ calculate $\prod\limits_{i} (c_i + d_{h_i})$, where $c_i$ - hash of ith child, $d_{h_i}$ - random number associated to depth of current child
