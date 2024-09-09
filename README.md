@@ -50,7 +50,7 @@
 - [ ] all define
 
 Для Юры
-- [ ] Выражения через тангенс половинного угла всего
+- [x] Выражения через тангенс половинного угла всего
 - [ ] 3d geom: hull nd, формулы???
 - [x] prime count (у kactl)
 - [x] golden section search (fftilted?)
