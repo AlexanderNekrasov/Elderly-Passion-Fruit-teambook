@@ -52,7 +52,7 @@
 Для Юры
 - [ ] Выражения через тангенс половинного угла всего
 - [ ] 3d geom: hull nd, формулы???
-- [ ] prime count (у kactl)
+- [x] prime count (у kactl)
 - [x] golden section search (fftilted?)
 - [x] determinants (fftilted)
 - [ ] solveLinear (fftilted)
