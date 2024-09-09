@@ -2,7 +2,7 @@
  * Author: allvik
  * Date: ?
  * Description: subset convolution
- * Time: 2^n * n^2 (500 ms n = 20 with pragms)
+ * Time: $2^n * n^2$ (500 ms n = 20 with pragms)
  */
 
 void transform(int n, int N, vector <int>& b, const vector <int>& a, const vector <int>& pc, bool rev) {
