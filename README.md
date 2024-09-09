@@ -59,7 +59,7 @@
 - [x] modular sqrt (fftilted)
 - [ ] Polynomial Interpolation (fftilted?)
 - [x] Fast modulo multiplication?
-- [ ] Код грея
+- [x] Код грея
 - [ ] Многомерный Симпсон (fftilted?)
 - [ ] Дискретное логарифмирование за быстро
 - [x] Хеширование деревьев, tree hash ред панды, протестить на таске с птз
