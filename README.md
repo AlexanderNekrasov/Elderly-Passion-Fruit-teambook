@@ -54,7 +54,7 @@
 - [ ] 3d geom: hull nd, формулы???
 - [ ] prime count (у kactl)
 - [x] golden section search (fftilted?)
-- [ ] determinants (fftilted)
+- [x] determinants (fftilted)
 - [ ] solveLinear (fftilted)
 - [x] modular sqrt (fftilted)
 - [ ] Polynomial Interpolation (fftilted?)
