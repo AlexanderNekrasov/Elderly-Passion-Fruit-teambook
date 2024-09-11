@@ -6,9 +6,9 @@
  */
 string minshift(string s) {
     int i = 0, ans = 0;
-    s += s;
+    s += s; // Remove for lyndon decomposition 
     int n = s.size();
-    while (i < n / 2) {
+    while (i < n / 2) { // (i < n) lyndon
         ans = i;
         int j = i + 1, k = i;
         while (j < n && s[k] <= s[j]) {
@@ -19,6 +19,7 @@ string minshift(string s) {
             ++j;
         }
         while (i <= k) {
+            // s.substr(i,j-k) - simple string
             i += j - k;
         }
     }
