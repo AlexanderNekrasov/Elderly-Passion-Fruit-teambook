@@ -55,7 +55,7 @@
 - [x] prime count (у kactl)
 - [x] golden section search (fftilted?)
 - [x] determinants (fftilted)
-- [ ] solveLinear (fftilted)
+- [x] solveLinear (fftilted)
 - [x] modular sqrt (fftilted)
 - [x] Polynomial Interpolation (fftilted?)
 - [x] Fast modulo multiplication?
