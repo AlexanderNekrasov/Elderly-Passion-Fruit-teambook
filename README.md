@@ -57,7 +57,7 @@
 - [x] determinants (fftilted)
 - [ ] solveLinear (fftilted)
 - [x] modular sqrt (fftilted)
-- [ ] Polynomial Interpolation (fftilted?)
+- [x] Polynomial Interpolation (fftilted?)
 - [x] Fast modulo multiplication?
 - [x] Код грея
 - [ ] Многомерный Симпсон (fftilted?)
